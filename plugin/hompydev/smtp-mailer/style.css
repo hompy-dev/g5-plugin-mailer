@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+/* form layout */
+#SMTPConfig > form {
+    display: inline-block;
+}
+#SMTPConfig div.row {
+    margin-bottom: 15px;
+    padding-left: 3px;
+}
+#SMTPConfig div.row > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+#SMTPConfig div.row label.title {
+    min-width: 85px;
+}
+
+/* input line elements */
+#SMTPConfig input.string {
+    min-width: 200px;
+    padding: 5px 5px 4px 5px;
+    font-weight: bold;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+#SMTPConfig input.string:focus-visible {
+    outline: 0;
+    border-bottom-color: #0075ff;
+}
+#SMTPConfig input.string:disabled {
+    color: #fff;
+    background-color: #fff !important;
+}
+#SMTPConfig .frm_info {
+    padding: 0 0 0 15px;
+    letter-spacing: -1px;
+}
+#SMTPConfig .frm_info.noimap {
+    padding: 0;
+    letter-spacing: -1px;
+}
+#SMTPConfig .frm_info.noimap a {
+    letter-spacing: 0;
+}
+#SMTPConfig .frm_info a {
+    color: inherit;
+}
+#SMTPConfig .radio {
+    min-width: 200px;
+    line-height: 25px;
+}
+
+
+/* providers */
+#SMTPConfig .providers > label,
+#SMTPConfig .radio > label {
+    cursor: pointer;
+}
+#SMTPConfig .providers > label {
+    margin-right: 20px;
+    vertical-align: baseline;
+}
+#SMTPConfig .providers label:after {
+    content: '';
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+    background-image: url(provider.png);
+    background-size: 266px 19px;
+    height: 19px;
+    filter: grayscale(1);
+    opacity: .7;
+}
+#SMTPConfig .providers label:hover::after,
+#SMTPConfig .providers label:has(input:checked)::after {
+    filter: none;
+    opacity: 1;
+}
+#SMTPConfig .providers label.label-naver::after {
+    width: 65px;
+    background-position: 0 0;
+}
+#SMTPConfig .providers label.label-daum::after {
+    width: 46px;
+    background-position: -344px 0;
+}
+#SMTPConfig .providers label.label-nate::after {
+    width: 63px;
+    background-position: -404px 0;
+}
+#SMTPConfig .providers label.label-gmail::after {
+    width: 55px;
+    background-position: -477px 0;
+}
+
+/* password view/hide */
+#SMTPConfig span.pw_wrapper {
+    display: inline-block;
+    position: relative;
+}
+#SMTPConfig span.pw_wrapper > input.string {
+    padding-right: 30px;
+}
+#SMTPConfig span.pw_wrapper > i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    color: #666;
+    padding: 6px 7px 7px 7px;
+    text-align: center;
+    cursor: pointer;
+}
+#SMTPConfig.disabled span.pw_wrapper > i {
+    visibility: hidden;
+}
+#SMTPConfig span.pw_wrapper.visible > i.fa:before {
+    content: "\f06e";
+}
+
+/* btns row */
+#SMTPConfig .btns {
+    padding-top: 35px;
+    border-top: 1px solid #ddd;
+}
+#SMTPConfig .btns .btn_submit {
+    width: 100px;
+    margin-left: 5px;
+    padding: 0;
+}
+#SMTPConfig .btns .btn_submit > i.fa-spinner {
+    display: none;
+}
+#SMTPConfig .btns .btn_submit.loading > i.fa-spinner {
+    display: inline-block;
+}
+#SMTPConfig #saveResultMsg {
+    margin-left: 20px;
+    color: #ed0606;
+    font-weight: bold;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: .7;
+}
+#saveResultMsg {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: .5s;
+}
+#saveResultMsg.on {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+}
